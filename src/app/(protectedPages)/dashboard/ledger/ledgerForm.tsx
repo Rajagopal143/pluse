@@ -281,11 +281,11 @@ export function LedgerAccountDialog({ open, onOpenChange }: any) {
                 <Dialog open={showAccountingLedgerFrom} onOpenChange={setshowAccountingLedgerFrom}>
                     <DialogTitle></DialogTitle>
                     <DialogContent>
-                        <AccountingLedgerForm />
+                        <AccountingLedgerForm setshowAccountingLedgerFrom={setshowAccountingLedgerFrom} />
                     </DialogContent>
                 </Dialog>
                 <div className='flex justify-end gap-2'>
-                    <Button variant='destructive'>Close</Button>
+                    <Button variant='destructive' onClick={() => onOpenChange(false)}>Close</Button>
                     <Button variant='outline'>Save</Button>
                 </div>  
             </DialogContent>

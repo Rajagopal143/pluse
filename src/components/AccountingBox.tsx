@@ -45,7 +45,7 @@ const AccountingBoxes = ({ data }: Props) => {
                             duration={1.5}
                             decimals={2}
                             separator=","
-                            prefix="AED "
+                            prefix="USD "
                         />
                     ) : (
                         `USD ${debitTotal.toFixed(2)}`
@@ -66,7 +66,7 @@ const AccountingBoxes = ({ data }: Props) => {
                             duration={1.5}
                             decimals={2}
                             separator=","
-                            prefix="AED "
+                            prefix="USD "
                         />
                     ) : (
                         `USD ${creditTotal.toFixed(2)}`

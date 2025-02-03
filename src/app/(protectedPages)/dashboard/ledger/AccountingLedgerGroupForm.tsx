@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Switch } from '@/components/ui/switch';
 
-export default function AccountingLedgerForm() {
+export default function AccountingLedgerForm({ setshowAccountingLedgerFrom }:any) {
     const { register, handleSubmit } = useForm();
     const [language, setLanguage] = useState<'en' | 'ar'>('en');
     const [ledgerActive, setLedgerActive] = useState(false);
@@ -221,11 +221,11 @@ export default function AccountingLedgerForm() {
 
                 {/* Form Actions */}
                 <div className="flex justify-end gap-4">
-                    <Button type="submit" variant="default">
-                        {translations[language].save}
-                    </Button>
-                    <Button type="button" variant="outline">
+                    <Button type="button" variant="destructive" onClick={() => setshowAccountingLedgerFrom(false)}>
                         {translations[language].close}
+                    </Button>
+                    <Button type="submit" variant="outline">
+                        {translations[language].save}
                     </Button>
                 </div>
             </form>
