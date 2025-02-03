@@ -140,7 +140,7 @@ const Header = () => {
                     <Popover>
                         <PopoverTrigger className="flex items-center gap-2">
                             <Avatar>
-                                <AvatarImage src={session?.user?.image || "/person.jpeg"} />
+                                <AvatarImage src={"/person.jpeg"} />
                                 <AvatarFallback className="bg-blue-500 text-white">
                                     {session?.user?.name?.charAt(0)}
                                 </AvatarFallback>
@@ -265,7 +265,6 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 animate={{
                     marginLeft: isHovered ? "256px" : "44px"
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
                 <div className="bg-white rounded-xl  shadow-sm">
                     {children}

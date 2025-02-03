@@ -20,3 +20,50 @@ model user{
   email String @unique 
   password String
 }
+model Voucher {
+  // You can choose either VoucherNo or VoucherEntryNo as the unique identifier.
+  // Here we set VoucherNo as the primary key.
+  VoucherNo             String   @id
+  VoucherDate           DateTime
+  VoucherRefNo          String
+  VoucherNarration      String
+  VoucherEnteredBy      String
+  VoucherEnteredOn      DateTime
+  VoucherVerifiedBy     String?  
+  VoucherVerifiedOn     DateTime?
+  VoucherApprovedBy     String?
+  VoucherApprovedOn     DateTime?
+  VoucherEntryNo        Int
+  AccountHead           String
+  AccountHeadName       String
+  DrCr                  String
+  DrAmount              Float    // Use Float or Decimal (with Prisma Decimal type) if you need more precision.
+  CrAmount              Float
+  VoucherAmountFormatted Float
+  EntryNarration        String
+  AccountGroup          String
+  MasterGroup           String
+  VoucherType           String
+  SysRemarks            String
+  VoucherModifiedBy     String?
+  VoucherModifiedOn     DateTime?
+  BillNo                String?
+  BillDate              DateTime?
+  BillPaidTo            String?
+  BillRemarks           String?
+  VoucherEffectiveDate  DateTime
+  AccountHeadArabic     String
+  ReferenceNote         String?
+}
+model Account {
+  // Here we assume AccountId is the unique identifier.
+  AccountId         String   @id
+  MasterGroupId     String
+  MasterGroup       String
+  AccountGroup      String
+  AccountGroupId    String
+  AccountHead       String
+  AccountHeadArabic String?
+  ReferenceNo       String?
+  IsLedgerObselete  Boolean
+}
